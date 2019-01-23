@@ -1,3 +1,24 @@
 #-------------------------------------------------------------------#
 
-Here, we included the code to develop a Conservation Status Index (CSI) and 
+Here, we included the code to calculate a Global Conservation Status Index (CSIglobal). 
+This CSIglobal is composed by the sum of CSIdiversity, CSIbiomass and CSIrelevant. 
+#--------------------------------------------------------------------#
+
+Conservation Status Index diversity (CSIdiversity)
+
+> To calculate the Species Richness of full localities of study area.
+
+richness<- function(x) {data.frame(RICHNESS=sum(x[-1]>0))})
+
+# Standarization by total richness
+final.richness <- function(x) {(x - min(x)) / (max(x)-(min(x)))}
+
+> To calculate the Trophic diversity using the Shannon-Weiver Index.
+
+diversity(x, index = "shannon", MARGIN = 1, base = exp(1)) (Vegan R package).
+
+> To calculate the Functional diversity trought RaoQ index (FD R package).
+
+divfun_spa<- dbFD(x = Rapeces, Lapeces, stand.x = FALSE, ord = "metric", corr = "sqrt", 
+scale.RaoQ = TRUE, calc.FGR = TRUE, clust.type = "mcquitty", calc.CWM = FALSE, CWM.type = "dom")
+
