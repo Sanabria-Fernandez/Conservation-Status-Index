@@ -10,15 +10,27 @@ Conservation Status Index diversity (CSIdiversity)
 
 richness<- function(x) {data.frame(RICHNESS=sum(x[-1]>0))})
 
-# Standarization by total richness
-final.richness <- function(x) {(x - min(x)) / (max(x)-(min(x)))}
 
 > To calculate the Trophic diversity using the Shannon-Weiver Index.
 
-diversity(x, index = "shannon", MARGIN = 1, base = exp(1)) (Vegan R package).
+Trophic.diversity<-diversity(x, index = "shannon", MARGIN = 1, base = exp(1)) (Vegan R package).
+
 
 > To calculate the Functional diversity trought RaoQ index (FD R package).
 
-divfun_spa<- dbFD(x = Rapeces, Lapeces, stand.x = FALSE, ord = "metric", corr = "sqrt", 
+Functional.diversity<- dbFD(x, y, stand.x = FALSE, ord = "metric", corr = "sqrt", 
 scale.RaoQ = TRUE, calc.FGR = TRUE, clust.type = "mcquitty", calc.CWM = FALSE, CWM.type = "dom")
+
+
+# Standarization 
+final.richness <- function(x) {(x - min(x)) / (max(x)-(min(x)))}
+
+CSIdiversity <- function (x) {standarized.richness + standarized.Trophic.diversity + standarized.funtional.diversity)}
+
+#--------------------------------------------------------------------#
+
+Conservation Status Index biomass (CSIbiomass)
+
+
+
 
