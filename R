@@ -37,7 +37,9 @@ The CSIbiomass is composed by: Biomass > 200 mm, biomass threatened and biomass 
 In general, the biomass was calculate using FishBase data (www.fishbase.com). 
 We run a general function according with the abundance and size of differents fish species.
 
-Epinephelus costae biomass example applying the 
+Epinephelus marginatus biomass example applying the next data:
+
+Lenght-weight relation
 
 > Biomass <- function(x) {
 
