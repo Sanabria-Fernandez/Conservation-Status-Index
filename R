@@ -82,7 +82,36 @@ Where:
 abundance.observed.sp1 is the fish abundance of your data.
 vulnerability.value.sp1 is the vulnerability value of fishbase for the sp1.
 
+
 To calculate the Abundance of higher carnivore
+
+Firstly we selected the higher carnivore species through Fishbase.
+
+Example higher carnivore of site 1:
+
+> previous.higher.carnivore<-function(x) {(Abun.observed.sp1 + Abun.observed.sp2 + Abun.observed.spN + ...)}
+> higher.carnivore<-log(previuos.higher.carnivore) + 1
+
+Where:
+Abun.observed.sp1 is the abundance of your data for the specie 1 at the site 1.
+
+> CSIrelevant <- function (x) {(standarize.Vulnerability + standarize.size + standarize.Abun.high.carnivore)}
+
+#---------------------------------------------------------------#
+
+Finally the CSI global is compute following the next function:
+
+> CSIglobal<- function(x) {(CSIdiversity + CSIbiomass + CSIrelevant)}
+
+
+
+
+
+
+
+
+
+
 
 
 
