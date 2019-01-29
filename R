@@ -43,7 +43,9 @@ Example for an unique size of a single specie:
 
 Lenght-weight relation
 
-> Biomass <-function(x) {((size.observed * weight.verified) / (size.verified))}
+> previous.Biomass.sp1 <-function(x) {((size.observed * weight.verified) / (size.verified))}
+> Biomass.sp1 <- (previous.Biomass.sp1 * abundance.sp1)
+> Biomass.site1 <- (Biomass.sp1 + Biomass.sp2 + Biomass.spN)
 
 Where:
 size.observed is the size of your data.
@@ -101,7 +103,7 @@ Abun.observed.sp1 is the abundance of your data for the specie 1 at the site 1.
 
 Finally the CSI global is compute following the next function:
 
-> CSIglobal<- function(x) {(CSIdiversity + CSIbiomass + CSIrelevant)}
+> CSIglobal <- function(x) {(CSIdiversity + CSIbiomass + CSIrelevant)}
 
 
 
