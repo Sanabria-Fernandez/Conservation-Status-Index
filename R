@@ -4,8 +4,8 @@ Authors: Jose A. Sanabria-Fernandez, Josu G. Alday, Natali Lazzari, Rodrigo Rier
 
 #-------------------------------------------------------------------#
 
-In the next lines, we included the explication and some codes used to calculate a Global Conservation Status Index (CSIglobal). 
-This CSIglobal is composed by the sum of CSIdiversity, CSIbiomass and CSIrelevant. 
+In the next lines, we included the explication and some codes used to calculate the Global Conservation Status Index (CSIglobal). 
+This CSIglobal is composed by the CSIdiversity, CSIbiomass and CSIrelevant. 
 
 #--------------------------------------------------------------------#
 
@@ -101,6 +101,7 @@ Example higher carnivore of site 1:
 
 Where:
 Abun.observed.sp1 is the abundance of your data for the specie 1 at the site 1.
+Abun.observed.sp2 is the abundance of your data for the specie 2 at the site 1.
 
 > CSIrelevant <- function (x) {(standarize.Vulnerability + standarize.size + standarize.Abun.high.carnivore)}
 
