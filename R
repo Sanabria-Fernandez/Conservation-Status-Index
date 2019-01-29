@@ -1,12 +1,17 @@
+
+Title: Marine protected areas are more effective but less reliable protecting fish biomass than fish diversity
+Authors: Jose A. Sanabria-Fernandez, Josu G. Alday, Natali Lazzari, Rodrigo Riera & Mikel A. Becerro
+
 #-------------------------------------------------------------------#
 
-Here, we included the code to calculate a Global Conservation Status Index (CSIglobal). 
+In the next lines, we included the explication and some codes used to calculate a Global Conservation Status Index (CSIglobal). 
 This CSIglobal is composed by the sum of CSIdiversity, CSIbiomass and CSIrelevant. 
+
 #--------------------------------------------------------------------#
 
 Conservation Status Index diversity (CSIdiversity) is integred by species richness, trophic diversity and functional diversity:
 
-# To calculate the species richness of the localities.
+# To calculate the species richness in the localities.
 
 > richness<- function(x) {data.frame(RICHNESS=sum(x[-1]>0))})
 
@@ -104,19 +109,3 @@ Abun.observed.sp1 is the abundance of your data for the specie 1 at the site 1.
 Finally the CSI global is compute following the next function:
 
 > CSIglobal <- function(x) {(CSIdiversity + CSIbiomass + CSIrelevant)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
