@@ -10,6 +10,8 @@ Conservation Status Index diversity (CSIdiversity) is integred by species richne
 
 > richness<- function(x) {data.frame(RICHNESS=sum(x[-1]>0))})
 
+Where:
+data.frame is your data.
 
 # To calculate the trophic diversity using the Shannon-Weiver Index.
 
@@ -34,19 +36,55 @@ Conservation Status Index biomass (CSIbiomass)
 
 The CSIbiomass is composed by: Biomass > 200 mm, biomass threatened and biomass commercial species.
 
-In general, the biomass was calculate using FishBase data (www.fishbase.com). 
-We run a general function according with the abundance and size of differents fish species.
+In general, the biomass was calculate using FishBase data for each fish species (www.fishbase.com). 
+We run a general function according with the abundance and size of different fish species.
 
-Epinephelus marginatus biomass example applying the next data:
+Example for an unique size of a single specie:
 
 Lenght-weight relation
 
-> Biomass <- function(x) {
+> Biomass <-function(x) {((size.observed * weight.verified) / (size.verified))}
 
+Where:
+size.observed is the size of your data.
+weight.verified is the weight of the Fishbase for a size.verified in Fishbase
 
 # Biomass > 200 mm
 
-We selected the size equal or up to 200 mm of fish lenght. 
+We selected the size equal or up to 200 mm of fish species and on this species we run the same function that Biomass.
+
+# Biomass threatened species
+
+Following the IUCN Red list for European fishes, we selected the species involved in this Red list. In this sense, we apply the same Biomass function to theses fish species.
+
+# Biomass commercial species
+
+Following the Spanish Commercial List of Marine Fishes (http://www.mapama.gob.es/es/pesca/temas/mercados-economia-pesquera/fichas_sp_comerciales.aspx) we selected theses species. And we run the Biomass function.
+
+
+> CSIbiomass <- function (x) {standarized.biomass.200 + standarized.threatened.species + standarized.commercial.species)}
+
+#-------------------------------------------------------------#
+
+Conservation Status Index relevant (CSIrelevant)
+
+The CSIrelevant is composed by: Vulnerability, size community and Abundance of higher carnivore.
+
+We obtained vulnerability of each fish species from Fishbase.
+
+To calculated the vulnerability of the full community, we apply the next function:
+
+Example to compute the vulnerability to site 1
+
+> vulnerability<-function(x) {((abundance.observed.sp1 * vulnerability.value.sp1) + (abundance.observed.sp2 * vulnerability.value.sp2) / (total.abundance.observed (sp1+sp2))}
+
+Where:
+abundance.observed.sp1 is the fish abundance of your data.
+vulnerability.value.sp1 is the vulnerability value of fishbase for the sp1.
+
+To calculate the Abundance of higher carnivore
+
+
 
 
 
