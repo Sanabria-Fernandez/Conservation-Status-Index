@@ -1,8 +1,7 @@
 
-Paper citation:
-
-Sanabria-Fernandez, J,A., Alday, J., Lazzari, N., Riera, R., & Becerro, M, M., 2019. Marine protected areas are more effective but 
-less reliable protecting fish biomass than fish diversity. Marine Pollution Bulletin.
+Title: Marine protected areas are more effective but less reliable protecting fish biomass than fish diversity
+Authors: Jose A. Sanabria-Fernandez, Josu G. Alday, Natali Lazzari, Rodrigo Riera & Mikel A. Becerro
+Journal: Marine Pollution Bulletin
 #-------------------------------------------------------------------#
 
 In the next lines, we included the explication and some codes used to calculate the Global Conservation Status Index (CSIglobal). 
