@@ -4,7 +4,7 @@ Authors: Jose A. Sanabria-Fernandez, Josu G. Alday, Natali Lazzari, Rodrigo Rier
 Journal: Marine Pollution Bulletin
 #-------------------------------------------------------------------#
 
-In the next lines, we included the explication and some codes used to calculate the Global Conservation Status Index (CSIglobal). 
+In the next lines, we included the explication and the codes used to calculate the Global Conservation Status Index (CSIglobal). 
 This CSIglobal is composed by the CSIdiversity, CSIbiomass and CSIrelevant. 
 
 #--------------------------------------------------------------------#
@@ -29,9 +29,6 @@ data.frame is your data.
 scale.RaoQ = TRUE, calc.FGR = TRUE, clust.type = "mcquitty", calc.CWM = FALSE, CWM.type = "dom")
 
 
-# Standarization
-
-> final.richness <- function(x) {(x - min(x)) / (max(x)-(min(x)))}
 
 > CSIdiversity <- function (x) {standarized.richness + standarized.Trophic.diversity + standarized.funtional.diversity)}
 
@@ -58,7 +55,7 @@ weight.verified is the weight of the Fishbase for a size.verified in Fishbase
 
 # Biomass > 200 mm
 
-We selected the size equal or up to 200 mm of fish species and on this species we run the same function that Biomass.
+We select specimens of more than 200 mm of fish species and on this species we run Biomass function.
 
 # Biomass threatened species
 
@@ -66,7 +63,8 @@ Following the IUCN Red list for European fishes, we selected the species involve
 
 # Biomass commercial species
 
-Following the Spanish Commercial List of Marine Fishes (http://www.mapama.gob.es/es/pesca/temas/mercados-economia-pesquera/fichas_sp_comerciales.aspx) we selected theses species. And we run the Biomass function.
+Following the Spanish Commercial List of Marine Fishes (http://www.mapama.gob.es/es/pesca/temas/mercados-economia-pesquera/fichas_sp_comerciales.aspx) 
+we selected theses species. And we run the Biomass function.
 
 
 > CSIbiomass <- function (x) {standarized.biomass.200 + standarized.threatened.species + standarized.commercial.species)}
