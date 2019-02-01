@@ -108,3 +108,8 @@ Abun.observed.sp2 is the abundance of your data for the specie 2 at the site 1.
 Finally the CSI global is compute following the next function:
 
 > CSIglobal <- function(x) {(CSIdiversity + CSIbiomass + CSIrelevant)}
+
+
+
+
+
